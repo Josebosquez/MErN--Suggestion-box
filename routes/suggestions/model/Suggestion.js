@@ -29,4 +29,4 @@ const suggestionsSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('suggestion-hw', suggestionsSchema)
+module.exports = mongoose.model('suggestion', suggestionsSchema)

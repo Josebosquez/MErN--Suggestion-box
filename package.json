@@ -1,5 +1,5 @@
 {
-  "name": "mern-suggestion-box-hw",
+  "name": "suggestion-box-hw",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,10 +15,16 @@
     "morgan": "^1.10.0",
     "uuid": "^8.3.2"
   },
-  "main": "app.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "MErN- Suggestion-box Mongo Express Node suggestion-box-hw",
-  "devDependencies": {}
+  "description": "Suggestion-box Mongo Express Node suggestion-box-hw",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josebosquez/Suggestion-box-hw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Josebosquez/Suggestion-box-hw/issues"
+  },
+  "homepage": "https://github.com/Josebosquez/Suggestion-box-hw#readme"
 }
