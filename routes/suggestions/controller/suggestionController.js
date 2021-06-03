@@ -18,9 +18,35 @@ async function getSingleSuggestion (req, res) {
     }
 };
 
-async function createSuggestion (req, res) {};
+async function createSuggestion(req, res){
+    const {title, likes, anonymous, suggestion, author} = req.body
+    
+    let errorObj = {}
+    
+        if(Object.keys(errorObj).length > 0){
+            return res.status(500).json({message:"error", payload: errorObj})
+        }
+        
+        try {
+            let createNewSuggest = new Suggestion ({
+                title, 
+                author, 
+                suggestion, 
+                likes,
+                anonymous,
+                timeCreated:Date.now()
+            })
 
-async function updateSuggestion (req, res) {};
+            let save = await createNewSuggest.save()
+            res.json({message:"Success", save})
+        } catch (error) {
+            res.status(500).json({message:"error", error:error.message})
+        }
+}
+
+async function updateSuggestion(req,res){
+
+};
 
 async function deleteSuggestion (req, res) {
     try {
