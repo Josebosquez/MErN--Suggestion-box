@@ -14,8 +14,8 @@ mongoose
     })
     .catch(function(e){
         console.log(e)
-    })
-    
+})
+
 var suggestionRouter = require('./routes/suggestionRouter');
 
 var app = express();

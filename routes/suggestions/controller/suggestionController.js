@@ -40,12 +40,28 @@ async function createSuggestion(req, res){
             let save = await createNewSuggest.save()
             res.json({message:"Success", save})
         } catch (error) {
-            res.status(500).json({message:"error", error:error.message})
+            res.status(500).json({message:"error", error: error.message})
         }
 }
 
 async function updateSuggestion(req,res){
+    let errorObj = {};
 
+    if(Object.keys(errorObj).length > 0){
+        return res.status(500).json({message:"error", payload: errorObj})
+    }
+
+    try {
+        let title = req.body.title;
+
+        let suggestion = req.body.suggestion;
+
+        let update = await Suggestion.findByIdAndUpdate(req.params.id, {$set: { title: title, suggestion: suggestion}}, {new:true})
+
+        res.json({message: 'success', payload: update})
+    } catch {
+        res.status(500).json({message:'error'})
+    }
 };
 
 async function deleteSuggestion (req, res) {
